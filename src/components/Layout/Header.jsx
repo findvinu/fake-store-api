@@ -5,7 +5,6 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -22,9 +21,6 @@ function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -41,7 +37,11 @@ function Header() {
     <AppBar position="static" className="headerWrapper">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Avatar alt="Remy Sharp" src={Logo}  sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Avatar
+            alt="Remy Sharp"
+            src={Logo}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+          />
           <Typography
             variant="h6"
             noWrap
@@ -52,7 +52,7 @@ function Header() {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              
+
               color: "inherit",
               textDecoration: "none",
             }}
@@ -61,25 +61,34 @@ function Header() {
           </Typography>
 
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-         
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-          
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }
               >
-                <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>
-                         Home
-                </NavLink>
-              </Button>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                Home
+              </NavLink>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <NavLink
+                to="/products"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }
               >
-                <NavLink to="/products" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>
-                         Products
-                </NavLink>
-              </Button>
+                Products
+              </NavLink>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

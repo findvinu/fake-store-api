@@ -59,3 +59,69 @@
 .product-list h4{
   margin-bottom: 20px;
 }
+
+.product a{
+  text-decoration: none;
+}
+
+.product .cardMediaWrapper{
+  height:140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product .cardMediaWrapper img{
+  background-position: top;
+  height: 100%;
+}
+
+.heading{
+  min-height: 64px;
+}
+.heading, .description{
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;/* Important for long words! */
+}
+
+.product-details{
+  margin-top: 30px;
+}
+.product-details-inner{
+  padding: 30px;
+}
+.product-details img{
+  width: 30%;
+}
+
+.content-wrapper{
+  padding: 50px 50px 50px 100px;
+}
+
+.product-details .heading5{
+  margin-top: 30px;
+}
+
+.product-details .heading2{
+  font-weight: bold;
+  margin-top: 50px;
+  color: #1976d2;
+}
+
+.product-details .heading3{
+  font-weight: bold;
+}
+
+.footer-wrapper{
+  background-color: #1976d2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 10px;
+}
