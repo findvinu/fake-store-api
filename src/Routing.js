@@ -4,9 +4,9 @@ import Home from './components/Home';
 
 export const Routing = () => {
     return (
-        <Routes>
-            <Route path='/' element={<Home /> } />
-            <Route path='/products' element={<ProductList />} />
-        </Routes>
-    )
+      <Routes>
+        <Route path="/" element={<ProductList />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    );
 }
