@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fake-store-api/home/static/css/main.eadab59c.css",
-    "main.js": "/fake-store-api/home/static/js/main.76a14c44.js",
+    "main.js": "/fake-store-api/home/static/js/main.88cf8a9e.js",
     "static/media/loading.gif": "/fake-store-api/home/static/media/loading.fe7748dae2789019073f.gif",
     "static/media/vinuBytes.png": "/fake-store-api/home/static/media/vinuBytes.c4c87fab3802519e572e.png",
     "index.html": "/fake-store-api/home/index.html",
     "main.eadab59c.css.map": "/fake-store-api/home/static/css/main.eadab59c.css.map",
-    "main.76a14c44.js.map": "/fake-store-api/home/static/js/main.76a14c44.js.map"
+    "main.88cf8a9e.js.map": "/fake-store-api/home/static/js/main.88cf8a9e.js.map"
   },
   "entrypoints": [
     "static/css/main.eadab59c.css",
-    "static/js/main.76a14c44.js"
+    "static/js/main.88cf8a9e.js"
   ]
 }
