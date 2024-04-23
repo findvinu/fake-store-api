@@ -5,9 +5,11 @@ import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea, CardActions, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
-import { use, useContext } from "react";
+// import { use, useContext } from "react";
 import { OpenDialogContext } from "../store/ModalDialogContextProvider";
-import Button from "@mui/material/Button";
+import Button from "./UI/Button";
+
+import axios from "axios";
 
 const Product = ({
   id,
@@ -17,12 +19,14 @@ const Product = ({
   category,
   image,
   rating,
+  deleteHandler
 }) => {
-  const { handleClickOpen } = useContext(OpenDialogContext);
+ // const { handleClickOpen } = useContext(OpenDialogContext);
   return (
     <div className="product">
-      <Link to={`${id}`} /*  onClick={handleClickOpen} */>
+    
         <Card>
+        <Link to={`${id}`} /*  onClick={handleClickOpen} */>
           <CardActionArea>
             <Box className="cardMediaWrapper">
               <CardMedia component="img" image={image} alt={title} />
@@ -47,17 +51,28 @@ const Product = ({
               >
                 {description}
               </Typography>
-              <Typography variant="body1" gutterBottom className="category">
-                Category: <span>{category}</span>
+              <Typography
+                variant="body1"
+                gutterBottom
+                className="category"
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <span>Count: {rating.count}</span>
+                <span> Category: {category}</span>
               </Typography>
             </CardContent>
           </CardActionArea>
+          </Link>
           <CardActions className="card-footer">
-            <span>Count: {rating.count}</span>
             <span>Rating: {rating.rate}</span>
+            <Button label="Delete" onClick={deleteHandler} />
           </CardActions>
         </Card>
-      </Link>
+     
     </div>
   );
 };

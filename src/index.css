@@ -1,3 +1,11 @@
+.loginBg {
+  height: 100vh;
+  width: 100vw;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card-footer{
   border: none;
     outline: 0;
@@ -19,20 +27,16 @@
   border-bottom: 1px solid #eee;
   margin-top: 2rem !important;
   padding-right: 5px;
+  color: initial;
 }
 
 .category span{
-  color: gray;  
   margin-left: 5px;
 }
 
 .price{
   padding: 1.5rem 0 1rem 0;
   text-align: center
-}
-
-.amount{
-  color: gray;
 }
 
 .headerWrapper button a{
@@ -76,16 +80,24 @@
   height: 100%;
 }
 
-.heading{
+.product .heading{
   min-height: 64px;
+  color: initial;
 }
-.heading, .description{
+
+.product h4{color: #1976d2;}
+
+.product .heading, .product .description{
   -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   word-wrap: break-word;/* Important for long words! */
+}
+
+.product .description{
+  color: initial;
 }
 
 .product-details{
@@ -125,3 +137,5 @@
   margin-top: 50px;
   padding: 10px;
 }
+
+

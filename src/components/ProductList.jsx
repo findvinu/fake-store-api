@@ -6,10 +6,10 @@ import LoadingImg from "../assets/images/loading.gif";
 import ModalDialog from "./UI/ModalDialog";
 import ProductDetails from "./ProductDetails";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const ProductList = () => {
-  const { data, isLoading, error } = useFetchData(productURL);
-  const { id } = useParams();
+  const { data, isLoading, error, setData } = useFetchData(productURL);
 
   if (isLoading)
     return (
@@ -20,6 +20,15 @@ const ProductList = () => {
   if (error) return <div>Error: {error.message}</div>;
   if (!data) return null;
 
+  const productDeleteHandler = async (productId) => {
+    try {
+      await axios.delete(`https://fakestoreapi.com/products/${productId}`);
+      setData(data.filter((product) => product.id !== productId));
+      console.log("proId", data);
+    } catch (error) {
+      console.log("Falied to delete product", error);
+    }
+  };
   return (
     <div className="product-list">
       <Typography variant="h4" gutterBottom>
@@ -29,7 +38,10 @@ const ProductList = () => {
         {data.map((product) => {
           return (
             <Grid item xs={3} key={product.id}>
-              <Product {...product} />
+              <Product
+                {...product}
+                deleteHandler={() => productDeleteHandler(product.id)}
+              />
             </Grid>
           );
         })}
@@ -37,7 +49,6 @@ const ProductList = () => {
         {/*  <ModalDialog>
           <ProductDetails />f asdf asdfads fadsf sdf sdf asdfadsf asdfsd
         </ModalDialog> */}
-        {console.log("data.id", id)}
       </Grid>
     </div>
   );
