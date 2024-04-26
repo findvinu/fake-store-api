@@ -5,11 +5,13 @@ import { productURL } from "../api/api";
 import LoadingImg from "../assets/images/loading.gif";
 import ModalDialog from "./UI/ModalDialog";
 import ProductDetails from "./ProductDetails";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import Button from "./UI/Button";
 
 const ProductList = () => {
   const { data, isLoading, error, setData } = useFetchData(productURL);
+  const navigate = useNavigate();
 
   if (isLoading)
     return (
@@ -24,16 +26,24 @@ const ProductList = () => {
     try {
       await axios.delete(`https://fakestoreapi.com/products/${productId}`);
       setData(data.filter((product) => product.id !== productId));
-      console.log("proId", data);
+      // console.log("proId", data);
     } catch (error) {
       console.log("Falied to delete product", error);
     }
   };
+
+  const productUpdateHandler = (productId, updateProductData) => {
+    navigate("/update-product");
+  };
+
   return (
     <div className="product-list">
-      <Typography variant="h4" gutterBottom>
-        Product List
-      </Typography>
+      <div className="addProductBtn">
+        <Typography variant="h4" gutterBottom>
+          Product List
+        </Typography>
+        <Button label="Add Product" onClick={() => navigate("/add-product")} />
+      </div>
       <Grid container spacing={3}>
         {data.map((product) => {
           return (
@@ -41,6 +51,7 @@ const ProductList = () => {
               <Product
                 {...product}
                 deleteHandler={() => productDeleteHandler(product.id)}
+                updateHandler={() => productUpdateHandler(product.id)}
               />
             </Grid>
           );

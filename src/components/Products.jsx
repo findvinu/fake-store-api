@@ -19,13 +19,13 @@ const Product = ({
   category,
   image,
   rating,
-  deleteHandler
+  deleteHandler,
+  updateHandler,
 }) => {
- // const { handleClickOpen } = useContext(OpenDialogContext);
+  // const { handleClickOpen } = useContext(OpenDialogContext);
   return (
     <div className="product">
-    
-        <Card>
+      <Card>
         <Link to={`${id}`} /*  onClick={handleClickOpen} */>
           <CardActionArea>
             <Box className="cardMediaWrapper">
@@ -66,13 +66,15 @@ const Product = ({
               </Typography>
             </CardContent>
           </CardActionArea>
-          </Link>
-          <CardActions className="card-footer">
-            <span>Rating: {rating.rate}</span>
+        </Link>
+        <CardActions className="card-footer">
+          <span>Rating: {rating.rate}</span>
+          <div className="card-action">
+            <Button label="Edit" onClick={updateHandler} />
             <Button label="Delete" onClick={deleteHandler} />
-          </CardActions>
-        </Card>
-     
+          </div>
+        </CardActions>
+      </Card>
     </div>
   );
 };

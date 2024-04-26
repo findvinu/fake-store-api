@@ -19,6 +19,10 @@
     justify-content: space-between;
 }
 
+.card-footer .card-action button:first-child{
+  margin-right: 8px;
+}
+
 .category{
   display: flex;
   justify-content:flex-end;
@@ -61,7 +65,7 @@
 }
 
 .product-list h4{
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .product a{
@@ -138,4 +142,45 @@
   padding: 10px;
 }
 
+.addProductBtn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 
+.addProjectPage, .updateProjectPage{
+  margin: 30px;
+}
+
+.addProjectPage h4, .updateProjectPage h4{
+  border-bottom: 2px solid #eee;
+  margin-bottom: 30px;
+}
+
+.addProjectPage form, .updateProjectPage form{
+  display: flex;
+  flex-direction: column;
+}
+
+.addProjectPage form div, .updateProjectPage form div{
+  margin-bottom: 20px;
+}
+
+.addProjectPage form div label, .updateProjectPage form div label{
+  transform: translate(0, -1.5px) scale(0.75);
+
+}
+
+.addProjectPage form div label.categoryLabel,.updateProjectPage form div label.categoryLabel{
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: auto;
+}
+
+textarea#description{
+  height: 60px !important;
+}
+
+.addProjectPage img, .updateProjectPage img{
+  width: 100%;
+}
