@@ -11,20 +11,27 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import MyPic from "../../assets/images/my_pic.jpg";
 import Logo from "../../assets/images/vinuBytes.png";
+import { useDispatch } from "react-redux";
+import { logout } from "../../store/authSlice";
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const logoutHandler = () => {
+    dispatch(logout());
+    console.log("logout clicked");
+    navigation("/");
   };
 
   return (
@@ -91,6 +98,18 @@ function Header() {
                 <Avatar alt="Remy Sharp" src={MyPic} />
               </IconButton>
             </Tooltip>
+            <NavLink
+              onClick={logoutHandler}
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "active logoutBtn"
+                  : "logoutBtn"
+              }
+            >
+              Logout
+            </NavLink>
           </Box>
         </Toolbar>
       </Container>

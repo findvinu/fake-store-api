@@ -5,16 +5,17 @@ import ProductDetails from "./components/ProductDetails";
 import { Login } from "@mui/icons-material";
 import AddProduct from "./components/AddProduct";
 import UpdateProduct from "./components/UpdateProduct";
+import NewUser from "./components/Login/NewUser";
 
 export const Routing = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/new-user" element={<NewUser />} />
       <Route path="/products" element={<ProductList />} />
       <Route path="/products/:id" element={<ProductDetails />} />
-      <Route path="/add-product" element={<AddProduct />} />
-      <Route path="/update-product" element={<UpdateProduct />} />
-      {/* <Route path="/login" element={<Login />} /> */}
+      <Route path="/products/add-product" element={<AddProduct />} />
+      <Route path="/products/update-product" element={<UpdateProduct />} />
     </Routes>
   );
 };

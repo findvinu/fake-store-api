@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login } from "../../store/authSlice";
 
 import InputField from "../../components/UI/InputField";
 import Button from "../../components/UI/Button";
@@ -11,13 +9,10 @@ import { authLoginURL } from "../../api/api";
 
 import classes from "./Login.module.css";
 
-const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const NewUser = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
-  const loginHandler = async (event) => {
+  /*   const loginHandler = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.post(authLoginURL, {
@@ -34,27 +29,34 @@ const Login = () => {
       console.log("Faled to login", error);
     }
   };
-
+ */
   return (
     <main className={classes.auth}>
-      <form onSubmit={loginHandler}>
+      <form>
         <div className={classes.control}>
           <InputField
-            label="Email"
-            type="email"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            label="First Name"
+            type="text"
+            /*  value={username}
+            onChange={(e) => setUsername(e.target.value)} */
           />
-          <span>hint email: test@test.com</span>
         </div>
         <div className={classes.control}>
           <InputField
-            label="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            label="Last Name"
+            type="text"
+            /* value={password}
+            onChange={(e) => setPassword(e.target.value)} */
           />
-          <span>hint password: 1234</span>
+        </div>
+        <div className={classes.control}>
+          <InputField label="Email" type="email" />
+        </div>
+        <div className={classes.control}>
+          <InputField label="Address" type="text" />
+        </div>
+        <div className={classes.control}>
+          <InputField label="Phone" type="text" />
         </div>
         <div
           style={{
@@ -63,9 +65,9 @@ const Login = () => {
             justifyContent: "space-between",
           }}
         >
-          <Button type="submit" label="Login" />
-          <Link to="/new-user" className="link">
-            New User
+          <Button type="submit" label="Add User" />
+          <Link to="/" className="link">
+            Already User
           </Link>
         </div>
       </form>
@@ -73,4 +75,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default NewUser;

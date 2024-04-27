@@ -32,8 +32,14 @@ const ProductList = () => {
     }
   };
 
-  const productUpdateHandler = (productId, updateProductData) => {
-    navigate("/update-product");
+  const productUpdateHandler = async (productId, updateProductData) => {
+    try {
+      await axios.put(`https://fakestoreapi.com/products/${productId}`);
+      setData(productId);
+      navigate("update-product");
+    } catch (error) {
+      console.log("Falied to update product", error);
+    }
   };
 
   return (

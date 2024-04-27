@@ -8,7 +8,7 @@ import ButtonComponent from "./UI/Button";
 import useFetchData from "../hooks/useFetchData";
 import { productURL } from "../api/api";
 
-const UpdateProduct = () => {
+const UpdateProduct = ({ productId }) => {
   const { data, isLoading, error, setData } = useFetchData(productURL);
 
   const updateProductHandler = async (event) => {
@@ -38,18 +38,15 @@ const UpdateProduct = () => {
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <form onSubmit={updateProductHandler}>
-            {data &&
-              data.map((product) => (
-                <InputField
-                  label="title"
-                  id="title"
-                  name="title"
-                  type="text"
-                  value={product.title}
-                  // onChange={(e) => setFormData({ title: e.target.value })}
-                />
-              ))}
-            {/*  <InputMultiline
+            <InputField
+              label="title"
+              id="title"
+              name="title"
+              type="text"
+              //  value={formData.title}
+              // onChange={(e) => setFormData({ title: e.target.value })}
+            />
+            <InputMultiline
               label="description"
               type="text"
               //  value={formData.description}
@@ -89,7 +86,7 @@ const UpdateProduct = () => {
               label="Update Product"
               onClick={updateProductHandler}
               type="button"
-            /> */}
+            />
           </form>
         </Grid>
         <Grid item xs={6}>

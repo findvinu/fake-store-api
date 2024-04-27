@@ -5,6 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .card-footer{
   border: none;
@@ -183,4 +186,14 @@ textarea#description{
 
 .addProjectPage img, .updateProjectPage img{
   width: 100%;
+}
+
+.logoutBtn{
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.link{
+  color:#1976d2;
 }
