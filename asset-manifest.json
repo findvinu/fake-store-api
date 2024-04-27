@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/fake-store-api/static/css/main.9c95a035.css",
-    "main.js": "/fake-store-api/static/js/main.74820dec.js",
+    "main.css": "/fake-store-api/static/css/main.0da11c7e.css",
+    "main.js": "/fake-store-api/static/js/main.a4d754dc.js",
     "static/media/loading.gif": "/fake-store-api/static/media/loading.fe7748dae2789019073f.gif",
     "static/media/add-new-product.jpg": "/fake-store-api/static/media/add-new-product.a8cf6c2ae5db57641338.jpg",
     "static/media/vinuBytes.png": "/fake-store-api/static/media/vinuBytes.c4c87fab3802519e572e.png",
     "static/media/update-product.jpg": "/fake-store-api/static/media/update-product.d57d69e3fd99ca7ddb8c.jpg",
     "index.html": "/fake-store-api/index.html",
-    "main.9c95a035.css.map": "/fake-store-api/static/css/main.9c95a035.css.map",
-    "main.74820dec.js.map": "/fake-store-api/static/js/main.74820dec.js.map"
+    "main.0da11c7e.css.map": "/fake-store-api/static/css/main.0da11c7e.css.map",
+    "main.a4d754dc.js.map": "/fake-store-api/static/js/main.a4d754dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c95a035.css",
-    "static/js/main.74820dec.js"
+    "static/css/main.0da11c7e.css",
+    "static/js/main.a4d754dc.js"
   ]
 }
